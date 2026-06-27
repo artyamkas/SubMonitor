@@ -24,8 +24,8 @@
 docker compose up --build -d
 ```
 
-- Фронтенд: http://localhost:8080
-- Бэкенд API: http://localhost:8000/docs
+- Фронтенд: http://localhost:1010
+- Бэкенд API: http://localhost:8000
 - Swagger: http://localhost:8000/docs
 
 ## Остановка
