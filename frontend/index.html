@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мониторинг подписок</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="toast-container" id="toastContainer"></div>
+<aside>
+    <h2><i class="fa-solid fa-layer-group"></i> SubMonitor</h2>
+    <nav>
+        <button class="active" data-page="dashboard"><i class="fa-solid fa-chart-pie"></i> Дашборд</button>
+        <button data-page="subscriptions"><i class="fa-solid fa-star"></i> Подписки</button>
+        <button data-page="payments"><i class="fa-solid fa-receipt"></i> Платежи</button>
+        <button data-page="categories"><i class="fa-solid fa-tags"></i> Категории</button>
+        <button data-page="methods"><i class="fa-solid fa-credit-card"></i> Способы оплаты</button>
+    </nav>
+</aside>
+
+<main>
+    <div id="dashboard" class="page active">
+        <h1>Обзор</h1>
+        <div class="stats-grid" id="statsGrid"></div>
+        <div class="chart-section">
+            <h3>Траты по категориям</h3>
+            <div id="categoryChart"></div>
+        </div>
+        <h3 style="margin-bottom:15px;">Ближайшие платежи (7 дней)</h3>
+        <div id="upcomingTable"></div>
+    </div>
+    <div id="subscriptions" class="page">
+        <div class="toolbar"><h1>Подписки</h1><button class="btn btn-primary" id="addSubBtn"><i class="fa-solid fa-plus"></i> Добавить</button></div>
+        <div id="subsTable"></div>
+    </div>
+    <div id="payments" class="page">
+        <div class="toolbar">
+            <h1>История платежей</h1>
+            <button class="btn btn-outline" id="checkPayBtn"><i class="fa-solid fa-sync"></i> Проверить платежи</button>
+        </div>
+        <div id="paymentsControls"></div>
+        <div id="paymentsTable"></div>
+        <div id="paymentsPagination"></div>
+    </div>
+    <div id="categories" class="page">
+        <div class="toolbar"><h1>Категории</h1><button class="btn btn-primary" id="addCatBtn"><i class="fa-solid fa-plus"></i> Добавить</button></div>
+        <div id="catsTable"></div>
+    </div>
+    <div id="methods" class="page">
+        <div class="toolbar"><h1>Способы оплаты</h1><button class="btn btn-primary" id="addMethodBtn"><i class="fa-solid fa-plus"></i> Добавить</button></div>
+        <div id="methodsTable"></div>
+    </div>
+</main>
+
+<div class="modal-overlay" id="modalOverlay">
+    <div class="modal">
+        <h3 id="modalTitle"></h3>
+        <div id="modalBody"></div>
+        <div class="modal-actions">
+            <button class="btn btn-outline" id="modalCancel">Отмена</button>
+            <button class="btn btn-primary" id="modalSave">Сохранить</button>
+        </div>
+    </div>
+</div>
+
+<script src="app.js"></script>
+<nav class="mobile-nav">
+    <button data-page="dashboard" class="active"><i class="fa-solid fa-chart-pie"></i><span>Обзор</span></button>
+    <button data-page="subscriptions"><i class="fa-solid fa-star"></i><span>Подписки</span></button>
+    <button data-page="payments"><i class="fa-solid fa-receipt"></i><span>Платежи</span></button>
+    <button data-page="categories"><i class="fa-solid fa-tags"></i><span>Категории</span></button>
+    <button data-page="methods"><i class="fa-solid fa-credit-card"></i><span>Оплата</span></button>
+</nav>
+</body>
+</html>

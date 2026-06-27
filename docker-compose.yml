@@ -1,0 +1,21 @@
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - db_data:/app/data
+    environment:
+      - DB_PATH=/app/data/subscriptions.db
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    ports:
+      - "1010:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  db_data:
