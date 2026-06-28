@@ -21,7 +21,8 @@
 ## Запуск
 
 ```bash
-docker compose up --build -d
+docker compose up --build -d # только для первого запуска
+docker compose start
 ```
 
 - Фронтенд: http://localhost:1010
@@ -31,6 +32,6 @@ docker compose up --build -d
 ## Остановка
 
 ```bash
-docker compose down        # остановить
+docker compose stop        # остановить
 docker compose down -v     # остановить + удалить БД
 ```
